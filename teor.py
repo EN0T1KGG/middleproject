@@ -94,4 +94,40 @@ SSL/TSL терминация (HTTPS)
 # комиты
 1-django config 
 2-Architectory-project 
+
+
+базовая конфигурация 
+сначала установка виртального окружения python -m venv venv 
+venv/scripts/activate - активация виртуалки 
+------------------------
+установка зависимостей 
+-установка ядра 
+pip install django 
+доп установочные пакеты 
+pip install django-environ psycopg2-binary redis celery django-celery-results
+установка инструментов разработчика 
+pip install pytest pytest-django pytest-cov black flake8
+замораживаем зависимости в файл 
+pip install freeze > requiremet.txt
+
+
+создание микроархитектуры
+src/-папка src для исходного кода 
+config/-проект django 
+apps/-папка для приложений 
+- создаем первое приложение django-admin startapp user 
+django-admin startapp api 
+
+
+
+настраиваем конфигурацию init в settings 
+в корне проекта создаем файл .env (для приватности данных)
+дял переменных окружения 
+
+создаём файлы игнорирования .gitignore и .dokerignore 
+в них заполняем разрегения и папки которые должны игнорироваться и не тянуться не в гит не в контейнеры докера 
+
+теперь начинаем закидывать приватность подтягивания файлов в настройки 
+
+вместо стандратного файла settings.py переносим его в settings/base.py
 """
