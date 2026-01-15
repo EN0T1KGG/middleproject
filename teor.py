@@ -93,5 +93,5 @@ SSL/TSL терминация (HTTPS)
 
 # комиты
 1-django config 
-
+2-Architectory-project 
 """
